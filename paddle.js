@@ -38,5 +38,4 @@ var paddle ={
 					this.x_cord+=move;
 				},
 				
-	text: "derek fails",
 };
