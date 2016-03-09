@@ -20,7 +20,7 @@ var paddle = {
 	draw: 		function(ctx) {
 				ctx.beginPath();
 				ctx.fillStyle = this.color;
-				ctx.fillRect(this.x, this.y, this.width, this.height);
+				ctx.fillRect(this.getX()-(this.getWidth()/2),this.getY()- (this.getHeight()/2), this.width, this.height);
 				ctx.stroke();
 			},
 				
