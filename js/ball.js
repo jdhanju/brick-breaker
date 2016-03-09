@@ -86,7 +86,7 @@ function Ball(x, y, radius, velX, velY, color) {
 	};
 	
 	/********** Create Object On Canvas **********/
-	this.draw = function(c){
+	this.draw = function(ctx){
 		ctx.beginPath();
 		ctx.arc(this.x, this.y, this.radius, 0, Math.PI*2, false);
 		ctx.fillStyle = this.color;
