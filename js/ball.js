@@ -1,15 +1,15 @@
 function Ball(x, y, radius, velX, velY, color) {
 	/** Create Data Values **/
-	this.x 			= x;
-	this.y 			= y;
+	this.x 		= x;
+	this.y 		= y;
 	this.radius 	= radius;
-	this.velX 		= velX;
-	this.velY 		= velY;
-	this.color 		= color;
-	this.top		= this.y - this.radius;
-	this.bottom		= this.y + this.radius;
-	this.left		= this.x - this.radius;
-	this.right		= this.x + this.radius;
+	this.velX 	= velX;
+	this.velY	= velY;
+	this.color 	= color;
+	this.top	= this.y - this.radius;
+	this.bottom	= this.y + this.radius;
+	this.left	= this.x - this.radius;
+	this.right	= this.x + this.radius;
 	
 	/********** Accessors **********/
 	this.getX = function(){
