@@ -1,40 +1,28 @@
-var paddle ={
-	x_cord: 300, // change depending on canvas
+var paddle = {
+	/***** Create Data Values *****/
+	x: 		550,
+	y: 		550,
+	width: 		90,
+	height:		20,
+	color:		"blue",
 	
-	y_cord: 500,// change depending on canvas
+	/********** Accessors **********/
+	getX: 		function() {return this.x;},
+	getY: 		function() {return this.y;},
+	getHeight: 	function() {return this.height;},	
+	getWidth: 	function() {return this.width;},
 	
-	Length: 90,
+	/********** Mutators **********/
+	setX: 		function(x) {this.x = x;},
+	move: 		function(change) {this.x+=change;},
 	
-	Width:20,
-	
-	getpaddleWidth: function(){
-					return this.Width;
-				},
+	/********** Create Object on Canvas **********/
+	draw: 		function(ctx) {
+				ctx.beginPath();
+				ctx.fillStyle = this.color;
+				ctx.fillRect(this.x, this.y, this.width, this.height);
+				ctx.stroke();
+			},
 				
-	getpaddleLength: function(){
-					return this.Length;
-				},
 	
-	changepaddleX: function(newX){
-				this.x = newX;
-				},
-	
-	getpaddleY: function(){
-					return this.y_cord;
-				},
-	
-	getpaddleX: function (){
-					return this.x_cord;
-				},
-	
-	drawPaddle: function(canvas){ // needs canvas as parameter 
-					canvas.beginPath();
-					canvas.fillRect(this.getpaddleX()-(this.getpaddleLength()/2),this.getpaddleY()- (this.getpaddleWidth()/2),this.getpaddleLength(),this.getpaddleWidth());
-					canvas.strokeStlye = "blue";
-					canvas.stroke();
-				},
-				
-	movePaddle: function(move){
-					this.x_cord+=move;
-				},
 };
