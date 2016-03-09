@@ -1,2 +1,2 @@
 # brick-breaker
-our brick breaker poject 1045
+our brick breaker project 1045
