@@ -37,4 +37,6 @@ var paddle ={
 	movePaddle: function(move){
 					this.x_cord+=move;
 				},
+				
+	text: "derek fails",
 };
