@@ -12,16 +12,16 @@ function Ball(x, y, radius, velX, velY, color) {
 	this.right	= this.x + this.radius;
 	
 	/********** Accessors **********/
-	this.getX = function(){
+	this.getX = function() {
 		return this.x;
 	};
-	this.getY = function(){
+	this.getY = function() {
 		return this.y;
 	};
-	this.getWidth = function(){
+	this.getWidth = function() {
 		return this.width;
 	};
-	this.getHeight = function(){
+	this.getHeight = function() {
 		return this.height;
 	};
 	
