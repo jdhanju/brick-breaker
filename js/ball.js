@@ -1,5 +1,5 @@
 function Ball(x, y, radius, velX, velY, color) {
-	/** Create Data Values **/
+	/********** Create Data Values **********/
 	this.x 		= x;
 	this.y 		= y;
 	this.radius 	= radius;
