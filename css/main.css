@@ -1,0 +1,42 @@
+canvas {
+	margin-left: 18px;
+	/*box-shadow: 0 0 25px #2E0000;*/
+}
+
+#extraData {
+	margin-left: 10px;
+	height: 600px;
+	width: 300px;
+}
+
+#innerBox {
+	margin-left: 22px;
+	margin-top: 4px;
+	height: 550px;
+	width: 250px;
+}
+
+#innerBox * {
+	margin: 3px 0px 3px 20px;
+}
+
+canvas, #extraData {
+	background-color: #FFFFFF;
+	border: 1px solid black;
+	float: left;
+	margin-bottom: 5px;
+	
+}
+
+p {
+	margin-top: 5px;
+}
+
+body {
+	background: linear-gradient(to bottom right, #BAE4F0, white);
+	background-attachment:fixed;
+}
+
+footer {
+	text-align: center;
+}
