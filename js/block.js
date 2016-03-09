@@ -1,10 +1,15 @@
 //Block cosntructor
-function Block(x, y, width, height) {
+function Block(x, y, width, height, color) {
 	/** Create Data Variables **/
 	this.x 		= x;
 	this.y 		= y;
 	this.width 	= width;
 	this.height 	= height;
+	this.top 	= this.y;
+	this.bottom 	= this.y + this.height;
+	this.left 	= this.x;
+	this.right 	= this.x + this.width;
+	this.color 	= color;
 	
 	/********** Accessor **********/
 	this.getX = function() {
@@ -33,4 +38,12 @@ function Block(x, y, width, height) {
 	this.setHeight = function(height) {
 		this.height = height;
 	};
+	
+	/********** Create Object on Canvas **********/
+	this.draw = function() {
+		ctx.beginPath();
+		ctx.fillStyle = this.color;
+		ctx.fillRect(this.x, this.y, this.width, this.height);
+		ctx.stroke();
+	}
 }
