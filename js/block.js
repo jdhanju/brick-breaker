@@ -32,5 +32,5 @@ function Block(x, y, width, height) {
 	};
 	this.setHeight = function(height) {
 		this.height = height;
-	}
+	};
 }
