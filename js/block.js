@@ -40,7 +40,7 @@ function Block(x, y, width, height, color) {
 	};
 	
 	/********** Create Object on Canvas **********/
-	this.draw = function() {
+	this.draw = function(ctx) {
 		ctx.beginPath();
 		ctx.fillStyle = this.color;
 		ctx.fillRect(this.x, this.y, this.width, this.height);
