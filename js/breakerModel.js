@@ -15,6 +15,7 @@ function paddle(event){
 	}
 }
 
+/*
 function draw(ctx){
 	ctx.clearRect(0,0,canvas.width,canvas.height); //wipes screen
 	
@@ -26,6 +27,7 @@ function draw(ctx){
 		blocks.draw(ctx);
 	}
 }
+*/
 
 
 
