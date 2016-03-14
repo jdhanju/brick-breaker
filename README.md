@@ -10,3 +10,4 @@ become lazy
 Things to do:
 1. Score,
 2. Removing blocks,
+3. Ball Currently Moves, Collision is not working
