@@ -1,11 +1,11 @@
 /**
- * Javeer Dhanju        
- * Calvin Lui           
+ * Jaiveer Dhanju       100245432
+ * Calvin Lui           100225224
  * Derek Yuan           100207884
  * CPSC 1045            Term Project
  *  
  * -insert Description here-
-**/
+ **/
 
 //Block cosntructor
 function Block(x, y, width, height, color) {
@@ -50,10 +50,8 @@ function Block(x, y, width, height, color) {
 	
 	/********** Create Object on Canvas **********/
 	this.draw = function(ctx) {
-		//ctx.beginPath();
 		ctx.fillStyle = this.color;
 		ctx.fillRect(this.x, this.y, this.width, this.height);
 		ctx.strokeRect(this.x, this.y, this.width, this.height);
-		//ctx.stroke();
 	}
 }

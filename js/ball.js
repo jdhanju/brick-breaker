@@ -1,11 +1,11 @@
 /**
- * Javeer Dhanju        
- * Calvin Lui           
+ * Jaiveer Dhanju       100245432
+ * Calvin Lui           100225224
  * Derek Yuan           100207884
  * CPSC 1045            Term Project
  *  
  * -insert Description here-
-**/
+ **/
 
 //Ball constructor
 function Ball(x, y, radius, velX, velY, color) {
