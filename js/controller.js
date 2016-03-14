@@ -9,6 +9,9 @@ function paddle(event){
 }
 
 function draw(ctx){
+	ctx.clearRect(0,0,canvas.width,canvas.height); //wipes screen
+	
+	//Redraw game
 	ball.move();
 	ball.draw(ctx);
 	paddle.draw(ctx);
