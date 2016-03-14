@@ -1,3 +1,11 @@
+/**
+ * Javeer Dhanju        
+ * Calvin Lui           
+ * Derek Yuan           100207884
+ * CPSC 1045            Term Project
+ *  
+ * -insert Description here-
+**/
 function Ball(x, y, radius, velX, velY, color) {
 	/********** Create Data Values **********/
 	this.x 		= x;
