@@ -12,7 +12,7 @@ function Ball(x, y, radius, velX, velY, color) {
 	/********** Create Data Values **********/
 	this.x 		= x;
 	this.y 		= y;
-	this.radius 	= radius;
+	this.radius = radius;
 	this.velX 	= velX;
 	this.velY	= velY;
 	this.color 	= color;
@@ -56,22 +56,11 @@ function Ball(x, y, radius, velX, velY, color) {
 	};
 	
 	/********** Editing Location Of Object **********/
-	this.move = function(blocksArr, paddle){
-		this.x += this.velX;
-		this.y += this.velY;
-		var newArr = withinRange(blocksArr, paddle);
-		
-		if (newArr.length > 0) {
-			this.wallCollision();
-			this.blockCollision(newArr, paddle);
-		}
-	};
-	
-	this.wallCollision = function() {
-		if (this.x > canvas.width - this.radius || this.x < this.radius)
+	this.wallCollision = function(ctx) {
+		if (this.x > ctx.canvas.width - this.radius || this.x < this.radius)
 			this.flipX();
 		
-		if (this.y > canvas.height - this.radius || this.y < this.radius)
+		if (this.y > ctx.canvas.height - this.radius || this.y < this.radius)
 			this.flipY();
 	};
 	
@@ -86,19 +75,27 @@ function Ball(x, y, radius, velX, velY, color) {
 				this.flipY();
 		}
 	}
-	
+	/*
 	this.withinRange = function(blocksArr, paddle) {
 		var newArr = [];
 		var range = this.radius + 10;
 		
 		for (var k = 0;k < blocksArr.length; k++) {
-			if (this.x + range > blocksArr[k].x || this.x - range < blocksArr[k].x || 
-				this.y + range > blocksArr[k].y || this.y - range < blocksArr[k].y)
+			if (this.x + range > blocksArr[k].x && this.x - range < blocksArr[k].x && 
+				this.y + range > blocksArr[k].y && this.y - range < blocksArr[k].y)
 				newArr.push(blocksArr[k]);
 		}
 		
 		return newArr;
-	}
+	}*/
+	
+	this.move = function(blocksArr, paddle, ctx){
+		this.x += this.velX;
+		this.y += this.velY;
+		
+		this.blockCollision(blocksArr, paddle);
+		this.wallCollision(ctx);
+	};
 	
 	this.flipX = function(){
 		this.velX = -this.velX;

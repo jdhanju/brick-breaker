@@ -8,7 +8,7 @@
  **/
 
 function clearCanvas(ctx) {
-	ctx.clearRect(0,0,canvas.width,canvas.height);
+	ctx.clearRect(0,0,ctx.canvas.width,ctx.canvas.height);
 }
  
 function draw(ctx){
