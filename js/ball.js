@@ -6,6 +6,8 @@
  *  
  * -insert Description here-
 **/
+
+//Ball constructor
 function Ball(x, y, radius, velX, velY, color) {
 	/********** Create Data Values **********/
 	this.x 		= x;
