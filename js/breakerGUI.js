@@ -7,6 +7,10 @@
  * -insert Description here-
  **/
 
+function updateScore(newScore){
+	document.getElementById("score").innerHTML = newScore;
+}
+
 function clearCanvas(ctx) {
 	ctx.clearRect(0,0,ctx.canvas.width,ctx.canvas.height);
 }
