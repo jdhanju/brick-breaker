@@ -8,8 +8,17 @@
  **/
 document.onkeypress = paddle;
 
+//Return position modifier or direction? 
 var KEYMAP = {
+	//LEFT
+	37:	, //Left Arrow key
+	65:	, //"A" key
+	97:	, //"a" key
 	
+	//RIGHT
+	39:	, //Right Arrow key
+	68:	, //"D" key
+	100:	, //"d" key
 }
 
 function paddle(event){
