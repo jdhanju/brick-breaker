@@ -12,7 +12,7 @@ function Ball(x, y, radius, velX, velY, color) {
 	/********** Create Data Values **********/
 	this.x 		= x;
 	this.y 		= y;
-	this.radius = radius;
+	this.radius 	= radius;
 	this.velX 	= velX;
 	this.velY	= velY;
 	this.color 	= color;
