@@ -7,14 +7,24 @@
  * -insert Description here-
  **/
 
+//To be linked with "New Game" button
+function newGame(){
+	document.getElementById("score").innerHTML = 0;
+	document.getElementById("lives").innerHTML = 3;
+}
+
+//Updates user score
 function updateScore(newScore){
 	document.getElementById("score").innerHTML = newScore;
 }
 
+//Clear canvas for drawing
 function clearCanvas(ctx) {
 	ctx.clearRect(0,0,ctx.canvas.width,ctx.canvas.height);
 }
  
+ //Should be called on a timer after game starts.
+ //Draws state of the game.
 function draw(ctx){
 	clearCanvas(ctx);
 	
