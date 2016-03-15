@@ -1,7 +1,7 @@
 var paddle = {
 	/***** Create Data Values *****/
-	x: 		500,
-	y: 		300,
+	x: 		500, // center x
+	y: 		300, //center y
 	width: 		90,
 	height:		20,
 	color:		"blue",
@@ -24,9 +24,10 @@ var paddle = {
 				ctx.stroke();
 			},
 			
-	collide:	function(){
-				var newX = this.getX() + (this.getWidth()/2)
-				if(newX>=1000 || newX<=0){
+	collide:	function(increaseNumber){
+				var rightCheck = this.getX() + (this.getWidth()/2) + increaseNumber;
+				var leftCheck = this.getX() -(this.getWidth()/2) + increaseNumber;
+				if(rightCheck>=1000 || leftCheck<=0){
 					return false;
 				}else{
 						return true;
