@@ -36,3 +36,9 @@ function draw(ctx){
 		blocks.draw(ctx);
 	}
 }
+
+//Calls other functions to update UI
+function updateUI(ctx, newScore){
+	draw(ctx);
+	updateScore(newScore);
+}
