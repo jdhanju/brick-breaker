@@ -27,10 +27,9 @@ var paddle = {
 	
 	/********** Create Object on Canvas **********/
 	draw: 		function(ctx) {
-				ctx.beginPath();
 				ctx.fillStyle = this.color;
-				ctx.fillRect(this.getX()-(this.getWidth()/2),this.getY()- (this.getHeight()/2), this.width, this.height);
-				ctx.stroke();
+				ctx.fillRect(this.getX()-(this.getWidth()/2), this.getY()-(this.getHeight()/2), this.width, this.height);
+				ctx.strokeRect(this.getX()-(this.getWidth()/2), this.getY()-(this.getHeight()/2), this.width, this.height);
 			},
 				
 	
