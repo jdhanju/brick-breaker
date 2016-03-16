@@ -8,42 +8,21 @@
  **/
 document.onkeypress = paddle;
 
-//Return position modifier or direction? 
-var KEYMAP = {
-	//LEFT
-	37:	, //Left Arrow key
-	65:	, //"A" key
-	97:	, //"a" key
-	
-	//RIGHT
-	39:	, //Right Arrow key
-	68:	, //"D" key
-	100:	, //"d" key
-}
+var speed = 5;
+
+var KEY_MAP = {
+	65:  -speed,
+	97:  -speed,
+	68:   speed,
+	100:  speed,
+};
 
 function paddle(event){
-	if(event.charCode ==100){
-		paddle.move(2)
-	} else if (event.charCode == 97) {
-		paddle.move(-2);
+	if(KEY_MAP[event.charCode] != undefined) {
+		if(paddle.collide(KEY_MAP[event.charCode]) == true )
+			paddle.move(KEY_MAP[event.charCode]);
+	} else {
+		// erase this?
+		console.log("wrong key");
 	}
 }
-
-/*
-function draw(ctx){
-	ctx.clearRect(0,0,canvas.width,canvas.height); //wipes screen
-	
-	//Redraw game
-	ball.move();
-	ball.draw(ctx);
-	paddle.draw(ctx);
-	for(ind=0;ind<blocks.length;ind++){
-		blocks.draw(ctx);
-	}
-}
-*/
-
-
-
-
-

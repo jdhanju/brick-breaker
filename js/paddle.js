@@ -9,8 +9,8 @@
 
 var paddle = {
 	/***** Create Data Values *****/
-	x: 		550,
-	y: 		550,
+	x: 			500,
+	y: 			500,
 	width: 		90,
 	height:		20,
 	color:		"blue",
@@ -27,10 +27,22 @@ var paddle = {
 	
 	/********** Create Object on Canvas **********/
 	draw: 		function(ctx) {
+				ctx.beginPath();
 				ctx.fillStyle = this.color;
-				ctx.fillRect(this.getX()-(this.getWidth()/2), this.getY()-(this.getHeight()/2), this.width, this.height);
-				ctx.strokeRect(this.getX()-(this.getWidth()/2), this.getY()-(this.getHeight()/2), this.width, this.height);
+				ctx.fillRect(this.getX()-(this.getWidth()/2),this.getY()- (this.getHeight()/2), this.width, this.height);
+				ctx.stroke();
 			},
+
+	/********** Collision Detection **********/
+	collide:	function(increaseNumber){
+				var rightCheck = this.getX() + (this.getWidth()/2) + increaseNumber;
+				var leftCheck = this.getX() -(this.getWidth()/2) + increaseNumber;
+				var ctx = document.querySelector("#theCanvas").getContext("2d");
 				
-	
+				if(rightCheck >= ctx.canvas.width || leftCheck <= 0){
+					return false;
+				}else{
+						return true;
+					}
+				}
 };
