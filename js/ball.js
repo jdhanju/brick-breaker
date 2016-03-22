@@ -42,6 +42,8 @@ function Ball(x, y, radius, velX, velY, color) {
 	};
 	
 	/********** Editing Location Of Object **********/
+	var lastFlipped = false;
+	
 	this.wallCollision = function(ctx) {
 		if (this.x > ctx.canvas.width - this.radius || this.x < this.radius)
 			this.flipX();
@@ -53,15 +55,23 @@ function Ball(x, y, radius, velX, velY, color) {
 	this.blockCollision = function(blocksArr, paddle) {
 		for(var j = 0;j < blocksArr.length;j++) {
 			if (this.bottom >= blocksArr[j].top && this.top <= blocksArr[j].bottom && 
-			((this.left <= blocksArr[j].right && this.right >= blocksArr[j].right) || (this.left <= blocksArr[j].left && this.right >= blocksArr[j].left))) {
-				this.flipX();
+			   ((this.left <= blocksArr[j].right && this.right >= blocksArr[j].right) || (this.left <= blocksArr[j].left && this.right >= blocksArr[j].left))){
+				if (!lastFlipped) {
+					this.flipX();
+					lastFlipped = true;
+				}
 				return j;
 			} else if (this.left <= blocksArr[j].right && this.right >= blocksArr[j].left && 
-			((this.top <= blocksArr[j].bottom && this.bottom >= blocksArr[j].bottom) || (this.top <= blocksArr[j].top && this.bottom >= blocksArr[j].top))) {
-				this.flipY();
+			          ((this.top <= blocksArr[j].bottom && this.bottom >= blocksArr[j].bottom) || (this.top <= blocksArr[j].top && this.bottom >= blocksArr[j].top))) {
+				if (!lastFlipped) {
+					this.flipY();
+					lastFlipped = true;
+				}
 				return j;
 			}
 		}
+		lastFlipped = false;
+		return -1;
 	}
 	/*
 	this.withinRange = function(blocksArr, paddle) {
@@ -82,8 +92,8 @@ function Ball(x, y, radius, velX, velY, color) {
 		this.y += this.velY;
 		
 		this.updatePosition();
-		this.blockCollision(blocksArr, paddle);
 		this.wallCollision(ctx);
+		return this.blockCollision(blocksArr, paddle);
 	};
 	
 	this.updatePosition = function() {

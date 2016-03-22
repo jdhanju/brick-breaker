@@ -21,8 +21,24 @@ function paddle(event){
 	if(KEY_MAP[event.charCode] != undefined) {
 		if(paddle.collide(KEY_MAP[event.charCode]) == true )
 			paddle.move(KEY_MAP[event.charCode]);
-	} else {
-		// erase this?
-		console.log("wrong key");
+	}
+}
+
+function randomizeVelocity() {
+    var random = 0;
+	
+    while(random === 0) {
+		random = Math.floor(Math.random()*21) - 10;
+	}
+	
+    return random;
+}
+
+var createBlocks = function() {
+	var x = 40;
+	
+	while (x+70 < theCanvas.width) {
+		blocksArr.push(new Block(x, 50, 70, 20, "skyblue"));
+		x += 70;
 	}
 }

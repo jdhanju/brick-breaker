@@ -20,20 +20,6 @@ function Block(x, y, width, height, color) {
 	this.right 	= this.x + this.width;
 	this.color 	= color;
 	
-	/********** Accessor **********/
-	this.getX = function() {
-		return this.x;
-	};
-	this.getY = function() {
-		return this.y;
-	};
-	this.getWidth = function() {
-		return this.width;
-	};
-	this.getHeight = function() {
-		return this.height;
-	};
-	
 	/********** Mutators **********/
 	this.setX = function(x) {
 		this.x = x;
