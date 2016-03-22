@@ -10,7 +10,7 @@
 var paddle = {
 	/***** Create Data Values *****/
 	x: 			500,
-	y: 			500,
+	y: 			550,
 	width: 		90,
 	height:		20,
 	color:		"blue",

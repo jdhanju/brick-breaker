@@ -12,7 +12,7 @@ function Ball(x, y, radius, velX, velY, color) {
 	/********** Create Data Values **********/
 	this.x 		= x;
 	this.y 		= y;
-	this.radius 	= radius;
+	this.radius = radius;
 	this.velX 	= velX;
 	this.velY	= velY;
 	this.color 	= color;
@@ -20,20 +20,6 @@ function Ball(x, y, radius, velX, velY, color) {
 	this.bottom	= this.y + this.radius;
 	this.left	= this.x - this.radius;
 	this.right	= this.x + this.radius;
-	
-	/********** Accessors **********/
-	this.getX = function() {
-		return this.x;
-	};
-	this.getY = function() {
-		return this.y;
-	};
-	this.getWidth = function() {
-		return this.width;
-	};
-	this.getHeight = function() {
-		return this.height;
-	};
 	
 	/************** Mutators **************/
 	this.setX = function(x) {
@@ -67,12 +53,14 @@ function Ball(x, y, radius, velX, velY, color) {
 	this.blockCollision = function(blocksArr, paddle) {
 		for(var j = 0;j < blocksArr.length;j++) {
 			if (this.bottom >= blocksArr[j].top && this.top <= blocksArr[j].bottom && 
-				this.left <= blocksArr[j].right && this.right >= blocksArr[j].left)
+			((this.left <= blocksArr[j].right && this.right >= blocksArr[j].right) || (this.left <= blocksArr[j].left && this.right >= blocksArr[j].left))) {
 				this.flipX();
-			
-			if (this.left <= blocksArr[j].right && this.right >= blocksArr[j].left && 
-				this.top <= blocksArr[j].bottom && this.bottom >= blocksArr[j].top)
+				return j;
+			} else if (this.left <= blocksArr[j].right && this.right >= blocksArr[j].left && 
+			((this.top <= blocksArr[j].bottom && this.bottom >= blocksArr[j].bottom) || (this.top <= blocksArr[j].top && this.bottom >= blocksArr[j].top))) {
 				this.flipY();
+				return j;
+			}
 		}
 	}
 	/*
@@ -93,9 +81,17 @@ function Ball(x, y, radius, velX, velY, color) {
 		this.x += this.velX;
 		this.y += this.velY;
 		
+		this.updatePosition();
 		this.blockCollision(blocksArr, paddle);
 		this.wallCollision(ctx);
 	};
+	
+	this.updatePosition = function() {
+		this.top	= this.y - this.radius;
+		this.bottom	= this.y + this.radius;
+		this.left	= this.x - this.radius;
+		this.right	= this.x + this.radius;
+	}
 	
 	this.flipX = function(){
 		this.velX = -this.velX;

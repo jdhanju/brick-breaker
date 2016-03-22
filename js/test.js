@@ -10,7 +10,7 @@
 var theCanvas = document.querySelector("#theCanvas");
 var ctx = theCanvas.getContext("2d");
 
-var ball = new Ball(500, 530, 10, 3, 4, "red", ctx);
+var ball = new Ball(480, 200, 10, 3, 5, "red");
 
 var ready = function() {
 	clearCanvas(ctx);
@@ -27,12 +27,12 @@ var ready = function() {
 };
 
 var createBlocks = function() {
-	var x = 50;
+	var x = 500;
 	var blocksArr = [];
 	
 	while (x+70 < theCanvas.width) {
-		blocksArr.push(new Block(x, 50, 70, 20, "skyblue"));
-		x += 75;
+		blocksArr.push(new Block(x, 300, 70, 20, "skyblue"));
+		x += 71;
 	}
 	
 	return blocksArr;

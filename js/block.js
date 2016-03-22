@@ -13,9 +13,9 @@ function Block(x, y, width, height, color) {
 	this.x 		= x;
 	this.y 		= y;
 	this.width 	= width;
-	this.height 	= height;
+	this.height = height;
 	this.top 	= this.y;
-	this.bottom 	= this.y + this.height;
+	this.bottom = this.y + this.height;
 	this.left 	= this.x;
 	this.right 	= this.x + this.width;
 	this.color 	= color;
