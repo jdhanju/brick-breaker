@@ -52,7 +52,7 @@ function Ball(x, y, radius, velX, velY, color) {
 			this.flipY();
 	};
 	
-	this.blockCollision = function(blocksArr, paddle) {
+	this.blockCollision = function(blocksArr) {
 		for(var j = 0;j < blocksArr.length;j++) {
 			if (this.bottom >= blocksArr[j].top && this.top <= blocksArr[j].bottom && 
 			   ((this.left <= blocksArr[j].right && this.right >= blocksArr[j].right) || (this.left <= blocksArr[j].left && this.right >= blocksArr[j].left))){
@@ -72,6 +72,17 @@ function Ball(x, y, radius, velX, velY, color) {
 		}
 		lastFlipped = false;
 		return -1;
+	}
+	
+	this.paddleCollide = function(pad){
+	if(this.x>=pad.left() && this.x<=pad.right() && this.bottom>=pad.top()){
+			this.flipY();
+	}else if((this.right>=pad.left() && this.bottom>=pad.top() && this.top<=pad.bottom()&& this.left<=pad.left())||
+				(this.left<=pad.right()&& this.bottom>=pad.top()&& this.top<=pad.bottom() && this.right>=pad.right())){
+			this.flipX();
+			// it works with left being greater than
+		}
+		
 	}
 	/*
 	this.withinRange = function(blocksArr, paddle) {
@@ -93,7 +104,8 @@ function Ball(x, y, radius, velX, velY, color) {
 		
 		this.updatePosition();
 		this.wallCollision(ctx);
-		return this.blockCollision(blocksArr, paddle);
+		this.paddleCollide(paddle);
+		return this.blockCollision(blocksArr);
 	};
 	
 	this.updatePosition = function() {
@@ -119,17 +131,3 @@ function Ball(x, y, radius, velX, velY, color) {
 		ctx.stroke();
 	};
 }
-
-
-if(javieer == gay) {
-	javieer = smiles;
-} else {
-	derek = gay;
-}
-
-return (javieer == gay) ? javieer = smiles : derek = gay;
-
-
-
-
-

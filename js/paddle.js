@@ -14,10 +14,10 @@ var paddle = {
 	width: 		90,
 	height:		20,
 	color:		"blue",
-	top:		function(){this.y;},
-	bottom:		function(){this.y + this.height;},
-	left:		function(){this.x;},
-	right: 		function(){this.x + this.width;},
+	top:		function(){return this.y;},
+	bottom:		function(){return this.y + this.height;},
+	left:		function(){return this.x;},
+	right: 		function(){return this.x + this.width;},    // calvin you forgot the returns for these functions - Jaiveer
 	
 	
 	/********** Mutators **********/
