@@ -119,3 +119,17 @@ function Ball(x, y, radius, velX, velY, color) {
 		ctx.stroke();
 	};
 }
+
+
+if(javieer == gay) {
+	javieer = smiles;
+} else {
+	derek = gay;
+}
+
+return (javieer == gay) ? javieer = smiles : derek = gay;
+
+
+
+
+
