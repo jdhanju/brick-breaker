@@ -8,18 +8,18 @@
  **/
 document.onkeypress = paddle;
 
-var speed = 5;
+var SPEED = 5;
 
 var KEY_MAP = {
 	//LEFT
-	37:  -speed,
-	65:  -speed,
-	97:  -speed,
+	37:  -SPEED,
+	65:  -SPEED,
+	97:  -SPEED,
 	
 	//RIGHT
-	39:   speed,
-	68:   speed,
-	100:  speed,
+	39:   SPEED,
+	68:   SPEED,
+	100:  SPEED,
 };
 
 function paddle(event){
