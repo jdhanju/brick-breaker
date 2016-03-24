@@ -11,8 +11,13 @@ document.onkeypress = paddle;
 var speed = 5;
 
 var KEY_MAP = {
+	//LEFT
+	37:  -speed,
 	65:  -speed,
 	97:  -speed,
+	
+	//RIGHT
+	39:   speed,
 	68:   speed,
 	100:  speed,
 };
