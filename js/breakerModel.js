@@ -6,9 +6,11 @@
  *  
  * -insert Description here-
  **/
-document.onkeypress = paddle;
+ 
+// document.onkeypress = paddle;
+document.onkeydown = paddle;
 
-var SPEED = 5;
+var SPEED = 10;
 
 var KEY_MAP = {
 	//LEFT
@@ -17,15 +19,15 @@ var KEY_MAP = {
 	97:  -SPEED,
 	
 	//RIGHT
-	39:   SPEED,
-	68:   SPEED,
-	100:  SPEED,
+	39:	SPEED,
+	68:	SPEED,
+	100:	SPEED,
 };
 
 function paddle(event){
-	if(KEY_MAP[event.charCode] != undefined) {
-		if(paddle.collide(KEY_MAP[event.charCode]) == true )
-			paddle.move(KEY_MAP[event.charCode]);
+	if(KEY_MAP[event.keyCode] != undefined) {
+		if(paddle.collide(KEY_MAP[event.keyCode]) == true )
+			paddle.move(KEY_MAP[event.keyCode]);
 	}
 }
 
