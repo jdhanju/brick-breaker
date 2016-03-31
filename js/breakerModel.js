@@ -1,6 +1,6 @@
 /**
- * Jaiveer Dhanju       100245432
- * Calvin Lui           100225224
+ * Jaiveer Dhanju     100245432
+ * Calvin Lui              100225224
  * Derek Yuan           100207884
  * CPSC 1045            Term Project
  *  
@@ -8,7 +8,7 @@
  **/
  
 // document.onkeypress = paddle;
-document.onkeydown = paddle;
+document.onkeydown = paddleMoveEvent;
 
 var SPEED = 10;
 
@@ -24,11 +24,16 @@ var KEY_MAP = {
 	100:	SPEED,
 };
 
-function paddle(event){
+var ball = new Ball(320, 300, 10, randomizeVelocity(), randomizeVelocity(), "red");
+var blocksArr = [];
+var score = 0, lives = 3;
+
+function paddleMoveEvent(event){
 	if(KEY_MAP[event.keyCode] != undefined) {
 		if(paddle.collide(KEY_MAP[event.keyCode]) == true )
 			paddle.move(KEY_MAP[event.keyCode]);
 	}
+	// console.log(event.keyCode);
 }
 
 function randomizeVelocity() {
@@ -49,3 +54,27 @@ var createBlocks = function() {
 		x += 70;
 	}
 }
+
+var removeBlocks = function(index) {
+	if (index >= 0) {
+		blocksArr.splice(index, 1);
+		score += 100;
+		updateInfo(score, lives);
+	}
+}
+
+var checkGameEnd = function() {
+	if (blocksArr.length == 0) {
+		return true;
+	}
+	return false;
+}
+
+//To be linked with "New Game" button
+var newGame = function(){
+	score = 0;
+	lives = 3;
+	blocksArr = [];
+	createBlocks();
+	updateInfo(score, lives);
+};
