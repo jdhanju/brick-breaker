@@ -48,8 +48,13 @@ function Ball(x, y, radius, velX, velY, color) {
 		if (this.x > ctx.canvas.width - this.radius || this.x < this.radius)
 			this.flipX();
 		
-		if (this.y > ctx.canvas.height - this.radius || this.y < this.radius)
+		if (this.y < this.radius) //this.y > ctx.canvas.height - this.radius || 
 			this.flipY();
+			
+		if(this.y > ctx.canvas.height - this.radius ){
+			//console.log("ayy");
+			loser();
+		}
 	};
 	
 	this.blockCollision = function(blocksArr) {

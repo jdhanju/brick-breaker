@@ -7,10 +7,10 @@
  * -insert Description here-
  **/
  
-// document.onkeypress = paddle;
+ //document.onkeypress = paddleMoveEvent;
 document.onkeydown = paddleMoveEvent;
 
-var SPEED = 10;
+var SPEED = 20;
 
 var KEY_MAP = {
 	//LEFT
@@ -68,6 +68,16 @@ var checkGameEnd = function() {
 		return true;
 	}
 	return false;
+}
+
+var loser = function(){
+		//console.log("lsdajf");
+		ball.setX(300);
+		ball.setY(200);
+		//ball.VelX= randomizeVelocity();
+		//ball.VelY= randomizeVelocity();
+		lives--;
+		
 }
 
 //To be linked with "New Game" button
