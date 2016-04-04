@@ -71,13 +71,13 @@ var checkGameEnd = function() {
 }
 
 var loser = function(){
-		//console.log("lsdajf");
-		ball.setX(300);
-		ball.setY(200);
-		//ball.VelX= randomizeVelocity();
-		//ball.VelY= randomizeVelocity();
-		lives--;
-		
+	//console.log("lsdajf");
+	ball.setX(300);
+	ball.setY(200);
+	//ball.VelX= randomizeVelocity();
+	//ball.VelY= randomizeVelocity();
+	lives--;
+	updateInfo(score,lives);
 }
 
 //To be linked with "New Game" button
