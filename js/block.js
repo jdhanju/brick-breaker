@@ -4,7 +4,7 @@
  * Derek Yuan           100207884
  * CPSC 1045            Term Project
  *  
- * -insert Description here-
+ * Block object for Brick Breaker
  **/
 
 //Block cosntructor
@@ -39,5 +39,5 @@ function Block(x, y, width, height, color) {
 		ctx.fillStyle = this.color;
 		ctx.fillRect(this.x, this.y, this.width, this.height);
 		ctx.strokeRect(this.x, this.y, this.width, this.height);
-	}
+	};
 }

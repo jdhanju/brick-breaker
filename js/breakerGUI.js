@@ -4,19 +4,8 @@
  * Derek Yuan           100207884
  * CPSC 1045            Term Project
  *  
- * -insert Description here-
+ * The view of Brick Breaker that updates the page of the current state of the game
  **/
-
-// var ball = new Ball(320, 300, 10, randomizeVelocity(), randomizeVelocity(), "red");
-// var blocksArr = [];
-// var score = 0, lives = 0;
-
-// To be linked with "New Game" button
-// var newGame = function(){
-	// score = 0;
-	// lives = 3;
-	// updateInfo();
-// };
 
 //Clear canvas for drawing
 var clearCanvas = function(ctx) {
@@ -37,21 +26,6 @@ var draw = function(ctx){
 	removeBlocks(ball.move(blocksArr, paddle, ctx));
 };
 
-// var removeBlocks = function(index) {
-	// if (index >= 0) {
-		// blocksArr.splice(index, 1);
-		// score += 100;
-		// updateInfo();
-	// }
-// }
-
-// var checkGameEnd = function() {
-	// if (blocksArr.length == 0) {
-		// return true;
-	// }
-	// return false;
-// }
-
 var endGame = function(message) {
 	clearCanvas(ctx);
 	ctx.font = "30px Arial";
@@ -66,8 +40,10 @@ var updateInfo = function(currentScore, currentLives) {
 //Calls other functions to update UI
 var updateUI = function(ctx){
 	if(checkGameEnd()) {
+		playEnding(true);
 		endGame("win");
 	}else if(lives===0){
+		playEnding(false);
 		endGame("lose");
 	}
 	else {

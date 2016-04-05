@@ -1,10 +1,10 @@
 /**
  * Jaiveer Dhanju       100245432
- * Calvin Lui           100225224
- * Derek Yuan           100207884
- * CPSC 1045            Term Project
+ * Calvin Lui                100225224
+ * Derek Yuan             100207884
+ * CPSC 1045              Term Project
  *  
- * -insert Description here-
+ * The ball object for Brick Breaker
  **/
 
 //Ball constructor
@@ -48,11 +48,10 @@ function Ball(x, y, radius, velX, velY, color) {
 		if (this.x > ctx.canvas.width - this.radius || this.x < this.radius)
 			this.flipX();
 		
-		if (this.y < this.radius) //this.y > ctx.canvas.height - this.radius || 
+		if (this.y < this.radius)
 			this.flipY();
 			
 		if(this.y > ctx.canvas.height - this.radius ){
-			//console.log("ayy");
 			loser();
 		}
 	};
@@ -89,19 +88,6 @@ function Ball(x, y, radius, velX, velY, color) {
 		}
 		
 	}
-	/*
-	this.withinRange = function(blocksArr, paddle) {
-		var newArr = [];
-		var range = this.radius + 10;
-		
-		for (var k = 0;k < blocksArr.length; k++) {
-			if (this.x + range > blocksArr[k].x && this.x - range < blocksArr[k].x && 
-				this.y + range > blocksArr[k].y && this.y - range < blocksArr[k].y)
-				newArr.push(blocksArr[k]);
-		}
-		
-		return newArr;
-	}*/
 	
 	this.move = function(blocksArr, paddle, ctx){
 		this.x += this.velX;
