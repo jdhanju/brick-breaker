@@ -45,7 +45,7 @@ var playEnding = function(isWin){
 }
 
 /**********GAME*********/
-var SPEED = 20;
+var SPEED = 40;
 
 var KEY_MAP = {
 	//LEFT
@@ -76,20 +76,25 @@ function randomizeVelocity() {
     var random = 0;
 	
     while(random === 0) {
-		random = Math.floor(Math.random()*21) - 10;
+		random = Math.floor(Math.random()*14) - 7;
 	}
 	
     return random;
 };
 
-function createBlocks() {
+var createBlocks = function() {
 	var x = 40;
-	
-	while (x+70 < theCanvas.width) {
-		blocksArr.push(new Block(x, 50, 70, 20, "skyblue"));
-		x += 70;
+	var y = 50;
+	for(var i = 0;i < 2; i++) {
+		while (x+70 < theCanvas.width) {
+			blocksArr.push(new Block(x, y, 70, 20, "skyblue"));
+			x += 70;
+		}
+		y += 20;
+		x = 40;
 	}
 }
+
 
 var removeBlocks = function(index) {
 	if (index >= 0) {

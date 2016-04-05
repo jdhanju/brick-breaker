@@ -17,7 +17,7 @@ var paddle = {
 	top:		   function(){return this.y;},
 	bottom:		function(){return this.y + this.height;},
 	left:		   function(){return this.x;},
-	right: 		function(){return this.x + this.width;},    // calvin you forgot the returns for these functions - Jaiveer
+	right: 		function(){return this.x + this.width;},
 	
 	
 	/********** Mutators **********/

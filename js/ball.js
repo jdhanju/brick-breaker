@@ -81,8 +81,8 @@ function Ball(x, y, radius, velX, velY, color) {
 	this.paddleCollide = function(pad){
 	if(this.x>=pad.left() && this.x<=pad.right() && this.bottom>=pad.top()){
 			this.flipY();
-	}else if((this.right>=pad.left() && this.bottom>=pad.top() && this.top<=pad.bottom()&& this.left<=pad.left())||
-				(this.left<=pad.right()&& this.bottom>=pad.top()&& this.top<=pad.bottom() && this.right>=pad.right())){
+	} else if((this.right>=pad.left() && this.bottom>=pad.top() && this.top<=pad.bottom()&& this.left<=pad.left())||
+				(this.left<=pad.right()&& this.bottom>=pad.top()&& this.top<=pad.bottom() && this.right>=pad.right())) {
 			this.flipX();
 			// it works with left being greater than
 		}
